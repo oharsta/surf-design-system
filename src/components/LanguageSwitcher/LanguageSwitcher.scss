@@ -1,0 +1,26 @@
+.sds--language-switcher {
+  ul {
+    @include align-icon-defaults(em(9px, 14), center);
+
+    li {
+      @include align-icon-defaults(em(9px, 14), center);
+      flex-shrink: 0;
+    }
+
+    a {
+      &:link,
+      &:visited {
+        @include lnk-decoration(show);
+
+        &:not(.is-active) {
+          font-weight: 600;
+          @include lnk-color(var(--sds--palette--main-color--400));
+        }
+
+        &.is-active {
+          @include lnk-color();
+        }
+      }
+    }
+  }
+}

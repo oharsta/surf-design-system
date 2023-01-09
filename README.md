@@ -17,7 +17,7 @@ yarn add @surfnet/sds
 Import the component's you want to use:
 
 ```js
-import {Button, Header} from "@surfnet/sds";
+import {LanguageSwitcher, Header} from "@surfnet/sds";
 ```
 
-You can then render the `Button` component like any other React component in JSX.
+You can then render the `LanguageSwitcher` component like any other React component in JSX.
