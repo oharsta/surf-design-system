@@ -30,25 +30,30 @@ PrimaryDisabled.args = {
 export const Secondary = Template.bind({});
 Secondary.args = {
     txt: 'Secondary',
-    className: 'secondary'
+    cancelButton: true
 };
 
 export const SecondaryDisabled = Template.bind({});
 SecondaryDisabled.args = {
     txt: 'Secondary disabled',
-    className: 'secondary',
+    cancelButton: true,
     disabled: true
 };
 
 export const Tertiary = Template.bind({});
 Tertiary.args = {
     txt: 'Tertiary',
-    className: 'tertiary',
+    className: ' sds--btn--tertiary',
 };
 
 export const TertiaryDisabled = Template.bind({});
 TertiaryDisabled.args = {
     txt: 'Tertiary disabled',
-    className: 'tertiary',
+    className: ' sds--btn--tertiary',
     disabled: true
+};
+
+export const DeleteButton = Template.bind({});
+DeleteButton.args = {
+    warningButton: true,
 };

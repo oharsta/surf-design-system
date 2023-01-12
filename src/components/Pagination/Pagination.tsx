@@ -1,63 +1,63 @@
 import React from "react";
-import "./Button.scss";
-// @ts-ignore
-import {ReactComponent as BinIcon} from "../../icons/functional_icons/Bin.svg";
-import {isEmpty, stopEvent} from "../../common/utils";
+import "./Pagination.scss";
 // @ts-ignore
 import DOMPurify from "dompurify";
+import {pageCount, pagination} from "./Algorithm";
 
-export interface ButtonProps {
-    onClick?: Function;
-    txt?: string;
-    disabled?: boolean;
-    cancelButton?: boolean;
-    warningButton?: boolean;
-    className?: string;
-    icon?: any;
-    small?: boolean;
-    html?: string;
-    centralize?: boolean
+import {ReactComponent as ArrowLeftIcon} from "../../icons/functional-icons/arrow-left-2.svg";
+import {ReactComponent as ArrowRightIcon} from "../../icons/functional-icons/arrow-right-2.svg";
+
+export interface PaginationProps {
+    currentPage: number;
+    onChange: Function;
+    total: number;
 }
 
-export const defaultButtonProps: ButtonProps = {
-    onClick: () => true,
-    txt: "",
-    disabled: false,
-    cancelButton: false,
-    warningButton: false,
-    className: "",
-    icon: null,
-    small: false,
-    html: "",
-    centralize: false,
-}
+const Pagination = (props: PaginationProps) => {
+    const nbrPages = Math.ceil(props.total / pageCount);
+    const rangeWithDots = pagination(props.currentPage, nbrPages);
 
-const Pagination = (props: ButtonProps) => {
-    const buttonType = props.cancelButton ? "sds--btn--secondary" : props.warningButton ? "delete" : "sds--btn--primary";
-    const smallButton = props.small ? "sds--btn--small" : "";
-    const cn = `${buttonType} ${props.className} ${smallButton}`;
-    const onClickInternal = (e: any) => {
-        stopEvent(e);
-        if (!props.disabled && props.onClick) {
-            props.onClick();
+    if (props.total <= pageCount) {
+        return null;
+    }
+
+    const ranges = (nbr: any, index: number) => {
+        const key = `${nbr}_${index}}}`;
+        if (typeof nbr === "string" || nbr instanceof String) {
+            return <li key={key}><span className="link-placeholder">...</span></li>
+        } else if (nbr === props.currentPage) {
+            return <li key={key}><a href="#" className="is-active" aria-current="page">{nbr}</a></li>
+        } else {
+            return <li key={key}><a href="#" onClick={() => props.onChange(nbr)}
+                                    aria-current="page">{nbr}</a></li>
         }
     }
-    const icon = props.warningButton ? <BinIcon/> : props.icon;
-    const txt = props.txt || "";
-    const result = isEmpty(props.html) ? <button type="button" className={cn} onClick={onClickInternal}>
-        {!props.warningButton && <span className="textual">{txt}</span>}
-        {icon}
-    </button> : <button type="button" className={cn} onClick={onClickInternal}>
-        <span className="textual" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.html)}}/>
-    </button>
-    if (props.centralize) {
-        return (
-            <section className="button-container">
-                {result}
-            </section>
-        );
-    }
-    return result;
+
+    return (
+        <div className="sds--pagination">
+            <nav className="sds--pagination--nav sds--text--body--large" aria-label="pagination">
+                <ul>
+                    {(nbrPages > 1 && props.currentPage !== 1) &&
+                    <li onClick={() => props.onChange(props.currentPage - 1)}>
+                        <a href="#">
+                            <ArrowLeftIcon/>
+                        </a>
+                    </li>}
+                    {
+                        rangeWithDots.map((nbr, index) => ranges(nbr, index))
+                    }
+                    {(nbrPages > 1 && props.currentPage !== nbrPages) &&
+                    <li onClick={() => props.onChange(props.currentPage + 1)}>
+                        <a href="#">
+                            <ArrowRightIcon/>
+                        </a>
+                    </li>}
+
+                </ul>
+            </nav>
+        </div>
+    )
+
 };
 
 export default Pagination;

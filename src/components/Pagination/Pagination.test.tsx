@@ -1,10 +1,10 @@
 import React from "react";
 import {render} from "@testing-library/react";
 
-import Pagination from "./Button";
+import Pagination from "./Pagination";
 
-describe("Button", () => {
-    test("renders the Button component", () => {
-        render(<Pagination/>);
+describe("Pagination", () => {
+    test("renders the Pagination component", () => {
+        render(<Pagination currentPage={1} onChange={() => true} total={40}/>);
     });
 });

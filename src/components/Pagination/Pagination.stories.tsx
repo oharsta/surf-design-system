@@ -1,15 +1,12 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 
-import Pagination, {defaultButtonProps} from './Button';
+import Pagination from './Pagination';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'ReactComponentLibrary/Button',
+    title: 'ReactComponentLibrary/Pagination',
     component: Pagination,
-    args: {
-        ...defaultButtonProps
-    }
 } as ComponentMeta<typeof Pagination>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
@@ -18,37 +15,5 @@ const Template: ComponentStory<typeof Pagination> = (args) => <Pagination {...ar
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
-    txt: 'Default'
-};
-
-export const PrimaryDisabled = Template.bind({});
-PrimaryDisabled.args = {
-    txt: 'Primary disabled',
-    disabled: true
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-    txt: 'Secondary',
-    className: 'secondary'
-};
-
-export const SecondaryDisabled = Template.bind({});
-SecondaryDisabled.args = {
-    txt: 'Secondary disabled',
-    className: 'secondary',
-    disabled: true
-};
-
-export const Tertiary = Template.bind({});
-Tertiary.args = {
-    txt: 'Tertiary',
-    className: 'tertiary',
-};
-
-export const TertiaryDisabled = Template.bind({});
-TertiaryDisabled.args = {
-    txt: 'Tertiary disabled',
-    className: 'tertiary',
-    disabled: true
+    currentPage: 6, onChange: () => true, total: 120
 };

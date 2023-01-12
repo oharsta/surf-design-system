@@ -1,9 +1,7 @@
 import React from "react";
 import "./Button.scss";
-// @ts-ignore
-import {ReactComponent as BinIcon} from "../../icons/functional_icons/Bin.svg";
-import {isEmpty, stopEvent} from "../../common/utils";
-// @ts-ignore
+import {ReactComponent as BinIcon} from "../../icons/functional-icons/bin.svg";
+import {stopEvent} from "../../common/utils";
 import DOMPurify from "dompurify";
 
 export interface ButtonProps {
@@ -35,7 +33,7 @@ export const defaultButtonProps: ButtonProps = {
 const Button = (props: ButtonProps) => {
     const buttonType = props.cancelButton ? "sds--btn--secondary" : props.warningButton ? "delete" : "sds--btn--primary";
     const smallButton = props.small ? "sds--btn--small" : "";
-    const cn = `${buttonType} ${props.className} ${smallButton}`;
+    const cn = `sds--btn ${buttonType} ${props.className} ${smallButton}`;
     const onClickInternal = (e: any) => {
         stopEvent(e);
         if (!props.disabled && props.onClick) {
@@ -44,12 +42,13 @@ const Button = (props: ButtonProps) => {
     }
     const icon = props.warningButton ? <BinIcon/> : props.icon;
     const txt = props.txt || "";
-    const result = isEmpty(props.html) ? <button type="button" className={cn} onClick={onClickInternal}>
-        {!props.warningButton && <span className="textual">{txt}</span>}
-        {icon}
-    </button> : <button type="button" className={cn} onClick={onClickInternal}>
-        <span className="textual" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.html)}}/>
-    </button>
+    const result = props.html ?
+        <button type="button" className={cn} onClick={onClickInternal} disabled={props.disabled}>
+            <span className="textual" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.html)}}/>
+        </button> : <button type="button" className={cn} disabled={props.disabled} onClick={onClickInternal}>
+            {!props.warningButton && <span className="textual">{txt}</span>}
+            {icon}
+        </button>
     if (props.centralize) {
         return (
             <section className="button-container">
