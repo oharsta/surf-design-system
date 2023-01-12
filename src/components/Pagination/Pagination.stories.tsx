@@ -2,6 +2,7 @@ import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 
 import Pagination from './Pagination';
+import {stopEvent} from "../../common/utils";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -15,5 +16,5 @@ const Template: ComponentStory<typeof Pagination> = (args) => <Pagination {...ar
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
-    currentPage: 6, onChange: () => true, total: 120
+    currentPage: 6, onChange: (e: any) => stopEvent(e), total: 120
 };

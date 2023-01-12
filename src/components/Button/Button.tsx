@@ -18,7 +18,7 @@ export interface ButtonProps {
 }
 
 export const defaultButtonProps: ButtonProps = {
-    onClick: () => true,
+    onClick: (e:any) => stopEvent(e),
     txt: "",
     disabled: false,
     cancelButton: false,

@@ -2,6 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import LanguageSwitcher from './LanguageSwitcher';
+import {stopEvent} from "../../common/utils";
 
 export default {
   title: 'ReactComponentLibrary/LanguageSwitcher',
@@ -16,5 +17,5 @@ export const Example = Template.bind({});
 Example.args = {
   languages: ['nl','en' ],
   currentLanguage: 'nl',
-  onLanguageSwitch: () => true
+  onLanguageSwitch: (e:any) => stopEvent(e),
 };
