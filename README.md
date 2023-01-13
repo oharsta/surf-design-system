@@ -22,6 +22,14 @@ import {LanguageSwitcher, Logo} from "@surfnet/sds";
 ```
 You can then render the `LanguageSwitcher` component like any other React component in JSX.
 
+## Storybook
+
+To generate and run the Storybook
+```
+npm run build-storybook
+npm run storybook
+```
+
 ## Publishing
 
 Increment the version in `package.json` and run the following commands:

@@ -32,7 +32,7 @@ const Checkbox = (props: CheckboxProps) => {
                 <span className="sds--checkbox--visual">
                     <LogoIcon/>
                 </span>
-                <span className="checkbox--text">props.info</span>
+                <span className="checkbox--text">{props.info}</span>
             </label>
         </div>
     );

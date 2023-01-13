@@ -16,44 +16,35 @@ export const Checked = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Checked.args = {
     name: "Checked",
+    info: "Checked",
     onChange: () => true,
     value: true,
     readOnly: false
 };
 
-export const PrimaryDisabled = Template.bind({});
-PrimaryDisabled.args = {
-    txt: 'Primary disabled',
-    disabled: true
+export const NotChecked = Template.bind({});
+NotChecked.args = {
+    name: "Not checked",
+    info: "Not checked",
+    onChange: () => true,
+    value: false,
+    readOnly: false
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-    txt: 'Secondary',
-    cancelButton: true
+export const CheckedDisabled = Template.bind({});
+CheckedDisabled.args = {
+    name: "Checked disabled",
+    info: "Checked disabled",
+    onChange: () => true,
+    value: true,
+    readOnly: true
 };
 
-export const SecondaryDisabled = Template.bind({});
-SecondaryDisabled.args = {
-    txt: 'Secondary disabled',
-    cancelButton: true,
-    disabled: true
-};
-
-export const Tertiary = Template.bind({});
-Tertiary.args = {
-    txt: 'Tertiary',
-    className: 'tertiary',
-};
-
-export const TertiaryDisabled = Template.bind({});
-TertiaryDisabled.args = {
-    txt: 'Tertiary disabled',
-    className: 'tertiary',
-    disabled: true
-};
-
-export const DeleteButton = Template.bind({});
-DeleteButton.args = {
-    warningButton: true,
+export const NotCheckedDisabled = Template.bind({});
+NotCheckedDisabled.args = {
+    name: "Not checked disabled",
+    info: "Not checked disabled",
+    onChange: () => true,
+    value: false,
+    readOnly: true
 };
