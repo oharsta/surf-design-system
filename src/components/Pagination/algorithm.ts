@@ -1,5 +1,3 @@
-export const pageCount = 10;
-
 //https://gist.github.com/kottenator/9d936eb3e4e3c3e02598
 export const pagination = (page: number, totalResults: number) => {
     const delta = 2,

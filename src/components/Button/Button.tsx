@@ -18,7 +18,7 @@ export interface ButtonProps {
 }
 
 export const defaultButtonProps: ButtonProps = {
-    onClick: (e:any) => stopEvent(e),
+    onClick: (e: any) => stopEvent(e),
     txt: "",
     disabled: false,
     cancelButton: false,
@@ -31,7 +31,8 @@ export const defaultButtonProps: ButtonProps = {
 }
 
 const Button = (props: ButtonProps) => {
-    const buttonType = props.cancelButton ? "sds--btn--secondary" : props.warningButton ? "delete" : "sds--btn--primary";
+    const isTertiary = (props.className || "").indexOf("tertiary") > -1;
+    const buttonType = props.cancelButton ? "sds--btn--secondary" : props.warningButton ? "delete" : isTertiary ? "sds--btn--tertiary" : "sds--btn--primary";
     const smallButton = props.small ? "sds--btn--small" : "";
     const cn = `sds--btn ${buttonType} ${props.className} ${smallButton}`;
     const onClickInternal = (e: any) => {

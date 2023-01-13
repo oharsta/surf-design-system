@@ -16,5 +16,5 @@ const Template: ComponentStory<typeof Pagination> = (args) => <Pagination {...ar
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
-    currentPage: 6, onChange: (e: any) => stopEvent(e), total: 120
+    currentPage: 6, onChange: (e: any) => stopEvent(e), total: 120, pageCount: 10
 };

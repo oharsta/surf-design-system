@@ -1,8 +1,6 @@
 import React from "react";
 import "./Pagination.scss";
-// @ts-ignore
-import DOMPurify from "dompurify";
-import {pageCount, pagination} from "./Algorithm";
+import {pagination} from "./algorithm";
 
 import {ReactComponent as ArrowLeftIcon} from "../../icons/functional-icons/arrow-left-2.svg";
 import {ReactComponent as ArrowRightIcon} from "../../icons/functional-icons/arrow-right-2.svg";
@@ -11,13 +9,14 @@ export interface PaginationProps {
     currentPage: number;
     onChange: Function;
     total: number;
+    pageCount: number;
 }
 
 const Pagination = (props: PaginationProps) => {
-    const nbrPages = Math.ceil(props.total / pageCount);
+    const nbrPages = Math.ceil(props.total / props.pageCount);
     const rangeWithDots = pagination(props.currentPage, nbrPages);
 
-    if (props.total <= pageCount) {
+    if (props.total <= props.pageCount) {
         return null;
     }
 

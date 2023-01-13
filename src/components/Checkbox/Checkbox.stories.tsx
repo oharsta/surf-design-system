@@ -1,24 +1,24 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 
-import Button, {defaultButtonProps} from './Button';
+import Checkbox from './Checkbox';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'ReactComponentLibrary/Button',
-    component: Button,
-    args: {
-        ...defaultButtonProps
-    }
-} as ComponentMeta<typeof Button>;
+    title: 'ReactComponentLibrary/Checkbox',
+    component: Checkbox,
+} as ComponentMeta<typeof Checkbox>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: ComponentStory<typeof Checkbox> = (args) => <Checkbox {...args} />;
 
-export const Default = Template.bind({});
+export const Checked = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Default.args = {
-    txt: 'Default'
+Checked.args = {
+    name: "Checked",
+    onChange: () => true,
+    value: true,
+    readOnly: false
 };
 
 export const PrimaryDisabled = Template.bind({});

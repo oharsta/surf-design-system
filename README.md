@@ -18,7 +18,7 @@ import '@surfnet/sds/styles/sds.css';
 ```
 Import the component's you want to use:
 ```js
-import {LanguageSwitcher, Header} from "@surfnet/sds";
+import {LanguageSwitcher, Logo} from "@surfnet/sds";
 ```
 You can then render the `LanguageSwitcher` component like any other React component in JSX.
 
