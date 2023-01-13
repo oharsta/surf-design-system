@@ -16,7 +16,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "rm -rf dist && rollup -c && cp package.json README.md ./dist",
+    "build": "rm -rf dist && rollup -c && cp package.json README.md ./dist && cp src/styles/sds.css ./dist",
     "test": "jest",
     "clean": "rm -rf dist",
     "storybook": "start-storybook -p 6006",
