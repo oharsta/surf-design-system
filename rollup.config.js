@@ -28,7 +28,20 @@ export default [
             commonjs(),
             typescript({tsconfig: "./tsconfig.json"}),
             image(),
-            svgr(),
+            svgr({
+                        svgoConfig: {
+                            plugins: [
+                                {
+                                    name: 'preset-default',
+                                    params: {
+                                        overrides: {
+                                            removeViewBox: false,
+                                        },
+                                    },
+                                },
+                            ]
+                        },
+                    }),
             postcss(),
         ],
     },
