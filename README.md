@@ -21,3 +21,13 @@ Import the component's you want to use:
 import {LanguageSwitcher, Header} from "@surfnet/sds";
 ```
 You can then render the `LanguageSwitcher` component like any other React component in JSX.
+
+## Publishing
+
+Increment the version in `package.json` and run the following commands:
+```
+npm run build
+npm login
+npm publish --access public ./dist
+```
+The package is published on https://www.npmjs.com/package/@surfnet/sds
