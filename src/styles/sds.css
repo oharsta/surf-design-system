@@ -2051,7 +2051,7 @@ html {
 
 @font-face {
     font-family: Nunito;
-    src: url(../fonts/Nunito/Nunito-Regular.ttf) format("truetype");
+    src: url(../fonts/Nunito/Nunito-Regular.woff2) format("woff2"), url(../fonts/Nunito/Nunito-Regular.ttf) format("truetype");
     font-weight: 400;
     font-style: normal;
     font-display: fallback
@@ -2059,7 +2059,7 @@ html {
 
 @font-face {
     font-family: Nunito;
-    src: url(../fonts/Nunito/Nunito-SemiBold.ttf) format("truetype");
+    src: url(../fonts/Nunito/Nunito-SemiBold.woff2) format("woff2"), url(../fonts/Nunito/Nunito-SemiBold.ttf) format("truetype");
     font-weight: 600;
     font-style: normal;
     font-display: fallback
@@ -2067,7 +2067,7 @@ html {
 
 @font-face {
     font-family: Nunito;
-    src: url(../fonts/Nunito/Nunito-Bold.ttf) format("truetype");
+    src: url(../fonts/Nunito/Nunito-Bold.woff2) format("woff2"), url(../fonts/Nunito/Nunito-Bold.ttf) format("truetype");
     font-weight: 700;
     font-style: normal;
     font-display: fallback
@@ -2075,7 +2075,7 @@ html {
 
 @font-face {
     font-family: 'Source Sans Pro';
-    src: url(../fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf) format("truetype");
+    src: url(../fonts/Source_Sans_Pro/SourceSansPro-Regular.woff2) format("woff2"), url(../fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf) format("truetype");
     font-weight: 400;
     font-style: normal;
     font-display: fallback
@@ -2083,7 +2083,7 @@ html {
 
 @font-face {
     font-family: 'Source Sans Pro';
-    src: url(../fonts/Source_Sans_Pro/SourceSansPro-SemiBold.ttf) format("truetype");
+    src: url(../fonts/Source_Sans_Pro/SourceSansPro-SemiBold.woff2) format("woff2"), url(../fonts/Source_Sans_Pro/SourceSansPro-SemiBold.ttf) format("truetype");
     font-weight: 600;
     font-style: normal;
     font-display: fallback
@@ -2091,7 +2091,7 @@ html {
 
 @font-face {
     font-family: 'Source Sans Pro';
-    src: url(../fonts/Source_Sans_Pro/SourceSansPro-Bold.ttf) format("truetype");
+    src: url(../fonts/Source_Sans_Pro/SourceSansPro-Bold.woff2) format("woff2"), url(../fonts/Source_Sans_Pro/SourceSansPro-Bold.ttf) format("truetype");
     font-weight: 700;
     font-style: normal;
     font-display: fallback
