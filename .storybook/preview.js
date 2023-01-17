@@ -1,4 +1,5 @@
 import "../src/styles/sds.css";
+import "react-tooltip/dist/react-tooltip.css";
 
 import React from 'react';
 
