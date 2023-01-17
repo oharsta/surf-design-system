@@ -7,5 +7,6 @@ export { default as Logo } from "./Logo";
 export { default as Pagination } from "./Pagination";
 export { default as RadioButton } from "./RadioButton";
 export { default as RadioOptions } from "./RadioOptions";
+export { default as Switch } from "./Switch";
 export { default as Tooltip } from "./Tooltip";
 export { default as UserInfo } from "./UserInfo";
