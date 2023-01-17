@@ -1,62 +1,50 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 
-import Checkbox from './Checkbox';
+import RadioButton from './RadioButton';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'ReactComponentLibrary/Checkbox',
-    component: Checkbox,
-} as ComponentMeta<typeof Checkbox>;
+    title: 'ReactComponentLibrary/RadioButton',
+    component: RadioButton,
+} as ComponentMeta<typeof RadioButton>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Checkbox> = (args) => <Checkbox {...args} />;
+const Template: ComponentStory<typeof RadioButton> = (args) => <RadioButton {...args} />;
 
 export const Checked = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Checked.args = {
+    label: "Checked",
     name: "Checked",
-    info: "Checked",
-    onChange: () => true,
     value: true,
-    readOnly: false,
+    onChange: () => true,
     tooltip: "Lorum Ipsum"
-
 };
 
 export const NotChecked = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
 NotChecked.args = {
+    label: "Not checked",
     name: "Not checked",
-    info: "Not checked",
-    onChange: () => true,
     value: false,
-    readOnly: false
+    onChange: () => true,
 };
 
 export const CheckedDisabled = Template.bind({});
 CheckedDisabled.args = {
+    label: "Checked disabled",
     name: "Checked disabled",
-    info: "Checked disabled",
-    onChange: () => true,
     value: true,
-    readOnly: true
+    onChange: () => true,
+    disabled: true
 };
 
 export const NotCheckedDisabled = Template.bind({});
 NotCheckedDisabled.args = {
     name: "Not checked disabled",
-    info: "Not checked disabled",
-    onChange: () => true,
+    label: "Not checked disabled",
     value: false,
-    readOnly: true
-};
-
-export const Hidden = Template.bind({});
-Hidden.args = {
-    name: "Not checked disabled",
-    info: "Not checked disabled",
     onChange: () => true,
-    value: false,
-    hide: true,
-    readOnly: true
+    disabled: true
 };

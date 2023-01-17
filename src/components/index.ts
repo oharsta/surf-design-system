@@ -1,6 +1,11 @@
+export { default as BadgeNumber } from "./BadgeNumber";
 export { default as Button } from "./Button";
-export { default as Logo } from "./Logo";
-export { default as LanguageSwitcher } from "./LanguageSwitcher";
-export { default as Pagination } from "./Pagination";
-export { default as Tooltip } from "./Tooltip";
+export { default as Checkbox } from "./Checkbox";
 export { default as Chip } from "./Chip";
+export { default as LanguageSwitcher } from "./LanguageSwitcher";
+export { default as Logo } from "./Logo";
+export { default as Pagination } from "./Pagination";
+export { default as RadioButton } from "./RadioButton";
+export { default as RadioOptions } from "./RadioOptions";
+export { default as Tooltip } from "./Tooltip";
+export { default as UserInfo } from "./UserInfo";

@@ -1,4 +1,13 @@
-.sds--checkbox--visual svg {
-  width: calc(13.62em / 16);
-  height: calc(11.88em / 16);
+.sds--checkbox-container {
+  &.hide {
+    visibility: hidden;
+  }
+
+  .sds--checkbox--visual {
+    svg {
+      width: calc(13.62em / 16);
+      height: calc(11.88em / 16);
+    }
+  }
+
 }
