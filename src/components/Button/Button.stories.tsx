@@ -1,7 +1,7 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 
-import Button, {defaultButtonProps} from './Button';
+import Button, {ButtonType, defaultButtonProps} from './Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -30,30 +30,58 @@ PrimaryDisabled.args = {
 export const Secondary = Template.bind({});
 Secondary.args = {
     txt: 'Secondary',
-    cancelButton: true
+    type: ButtonType.Secondary
 };
 
 export const SecondaryDisabled = Template.bind({});
 SecondaryDisabled.args = {
     txt: 'Secondary disabled',
-    cancelButton: true,
+    type: ButtonType.Secondary,
     disabled: true
 };
 
 export const Tertiary = Template.bind({});
 Tertiary.args = {
     txt: 'Tertiary',
-    className: 'tertiary',
+    type: ButtonType.Tertiary
 };
 
 export const TertiaryDisabled = Template.bind({});
 TertiaryDisabled.args = {
     txt: 'Tertiary disabled',
-    className: 'tertiary',
+    type: ButtonType.Tertiary,
     disabled: true
 };
 
 export const DeleteButton = Template.bind({});
 DeleteButton.args = {
-    warningButton: true,
+    type: ButtonType.Delete
+};
+
+export const GhostLight = Template.bind({});
+GhostLight.args = {
+    txt: 'GhostLight',
+    type: ButtonType.GhostLight
+};
+GhostLight.parameters = {backgrounds: { default: 'blue' }}
+
+export const GhostLightDisabled = Template.bind({});
+GhostLightDisabled.args = {
+    txt: 'GhostLight disabled',
+    type: ButtonType.GhostLight,
+    disabled: true
+};
+GhostLightDisabled.parameters = {backgrounds: { default: 'blue' }}
+
+export const GhostDark = Template.bind({});
+GhostDark.args = {
+    txt: 'GhostDark',
+    type: ButtonType.GhostDark
+};
+
+export const GhostDarkDisabled = Template.bind({});
+GhostDarkDisabled.args = {
+    txt: 'GhostDark disabled',
+    type: ButtonType.GhostDark,
+    disabled: true
 };

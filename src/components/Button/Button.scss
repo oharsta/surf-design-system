@@ -1,7 +1,11 @@
 .sds--btn {
-  &.delete svg {
-    path {
+  &.sds--btn--delete {
+    svg path {
       stroke-width: 1.5;
+    }
+
+    &:hover {
+      color: var(--sds--color--red--500);
     }
   }
 }

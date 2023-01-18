@@ -4,16 +4,28 @@ import {ReactComponent as BinIcon} from "../../icons/functional-icons/bin.svg";
 import {stopEvent} from "../../common/utils";
 import DOMPurify from "dompurify";
 
+export enum ButtonType {
+    Primary = "sds--btn--primary",
+    Secondary = "sds--btn--secondary",
+    Tertiary = "sds--btn--tertiary",
+    GhostDark = "sds--btn--ghost--dark",
+    GhostLight = "sds--btn--ghost--light",
+    Delete = "sds--btn--delete"
+}
+
+export enum ButtonSize {
+    Default = "",
+    Small = "sds--btn--small",
+    Full = "sds--btn--full",
+}
+
 export interface ButtonProps {
     onClick?: Function;
     txt?: string;
     disabled?: boolean;
-    cancelButton?: boolean;
-    warningButton?: boolean;
-    className?: string;
+    type?: ButtonType;
     icon?: any;
-    small?: boolean;
-    html?: string;
+    size?: ButtonSize;
     centralize?: boolean
 }
 
@@ -21,43 +33,32 @@ export const defaultButtonProps: ButtonProps = {
     onClick: (e: any) => stopEvent(e),
     txt: "",
     disabled: false,
-    cancelButton: false,
-    warningButton: false,
-    className: "",
+    type: ButtonType.Primary,
     icon: null,
-    small: false,
-    html: "",
-    centralize: false,
+    size: ButtonSize.Default
 }
 
 const Button = (props: ButtonProps) => {
-    const isTertiary = (props.className || "").indexOf("tertiary") > -1;
-    const buttonType = props.cancelButton ? "sds--btn--secondary" : props.warningButton ? "delete" : isTertiary ? "sds--btn--tertiary" : "sds--btn--primary";
-    const smallButton = props.small ? "sds--btn--small" : "";
-    const cn = `sds--btn ${buttonType} ${props.className} ${smallButton}`;
+    const type = `${(props.type || ButtonType.Primary).toLowerCase()}`
+    const size = `${(props.size || ButtonSize.Default).toLowerCase()}`
+    const className = `sds--btn ${type} ${size}`
+
     const onClickInternal = (e: any) => {
         stopEvent(e);
         if (!props.disabled && props.onClick) {
             props.onClick();
         }
     }
-    const icon = props.warningButton ? <BinIcon/> : props.icon;
-    const txt = props.txt || "";
-    const result = props.html ?
-        <button type="button" className={cn} onClick={onClickInternal} disabled={props.disabled}>
-            <span className="textual" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.html)}}/>
-        </button> : <button type="button" className={cn} disabled={props.disabled} onClick={onClickInternal}>
-            {!props.warningButton && <span className="textual">{txt}</span>}
-            {icon}
-        </button>
-    if (props.centralize) {
-        return (
-            <section className="button-container">
-                {result}
-            </section>
-        );
-    }
-    return result;
+
+    return (
+        <button type="button"
+                className={className}
+                onClick={onClickInternal}
+                disabled={props.disabled}>
+            <span className="textual"
+                  dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.txt || "")}}/>
+            {props.type === ButtonType.Delete ? <BinIcon/> : props.icon}
+        </button>);
 };
 
 export default Button;

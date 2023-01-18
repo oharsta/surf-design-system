@@ -17,6 +17,7 @@ export enum AlertType {
 export interface AlertProps {
     message: string;
     alertType: AlertType;
+    close?: React.MouseEventHandler<HTMLButtonElement>;
     action?: React.MouseEventHandler<HTMLButtonElement>;
     actionLabel?: string;
     asChild?: boolean;
@@ -39,10 +40,10 @@ const Alert = (props: AlertProps) => {
                             onClick={props.action}
                             className="sds--btn sds--btn--ghost--dark sds--btn--small">{props.actionLabel}</button>}
                 </div>
-                <button className="sds--alert--actions">
+                {props.close && <button className="sds--alert--actions" onClick={props.close}>
                     <span className="text sds--visually-hidden">Close alert</span>
                     <CloseIcon/>
-                </button>
+                </button>}
             </div>
         </div>);
 
