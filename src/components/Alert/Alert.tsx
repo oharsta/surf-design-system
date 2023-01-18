@@ -19,31 +19,30 @@ export interface AlertProps {
     alertType: AlertType;
     action?: React.MouseEventHandler<HTMLButtonElement>;
     actionLabel?: string;
+    asChild?: boolean;
 }
 
 const Alert = (props: AlertProps) => {
     const className = `sds--alert ${props.alertType.toLowerCase()} ${props.action ? "sds--alert--has-action" : ""}`;
     return (
         <div className={className}>
-            <div className="sds--page-container">
-                <div className="sds--alert--inner">
-                    <div className="sds--alert--visual">
-                        {[AlertType.Error, AlertType.Warning].includes(props.alertType) && <AlertIcon/>}
-                        {[AlertType.Default, AlertType.Info].includes(props.alertType) && <InfoIcon/>}
-                        {[AlertType.Success].includes(props.alertType) && <SuccessIcon/>}
-                    </div>
-                    <div className="sds--alert--textual">
-                        <p dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.message)}}/>
-                        {props.action &&
-                        <button type="button"
-                                onClick={props.action}
-                                className="sds--btn sds--btn--ghost--dark sds--btn--small">{props.actionLabel}</button>}
-                    </div>
-                    <button className="sds--alert--actions">
-                        <span className="text sds--visually-hidden">Close alert</span>
-                        <CloseIcon/>
-                    </button>
+            <div className={`sds--alert--inner ${props.asChild ? "" : "sds--page-container"}`}>
+                <div className="sds--alert--visual">
+                    {[AlertType.Error, AlertType.Warning].includes(props.alertType) && <AlertIcon/>}
+                    {[AlertType.Default, AlertType.Info].includes(props.alertType) && <InfoIcon/>}
+                    {[AlertType.Success].includes(props.alertType) && <SuccessIcon/>}
                 </div>
+                <div className="sds--alert--textual">
+                    <p dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.message)}}/>
+                    {props.action &&
+                    <button type="button"
+                            onClick={props.action}
+                            className="sds--btn sds--btn--ghost--dark sds--btn--small">{props.actionLabel}</button>}
+                </div>
+                <button className="sds--alert--actions">
+                    <span className="text sds--visually-hidden">Close alert</span>
+                    <CloseIcon/>
+                </button>
             </div>
         </div>);
 

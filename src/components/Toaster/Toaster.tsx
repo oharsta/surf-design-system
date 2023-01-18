@@ -21,7 +21,7 @@ export interface ToasterProps {
 }
 
 const Toaster = (props: ToasterProps) => {
-    const className = `sds--toaster ${props.toasterType.toLowerCase()} ${props.action ? "sds--toaster--has-action": ""}`;
+    const className = `sds--toaster ${props.toasterType.toLowerCase()} ${props.action ? "sds--toaster--has-action" : ""}`;
     return (
         <div className={className}>
             <div className="sds--toaster--visual">
@@ -33,10 +33,10 @@ const Toaster = (props: ToasterProps) => {
                 <p dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.message)}}/>
                 {props.action &&
                 <button type="button"
-                onClick={props.action}
+                        onClick={props.action}
                         className="sds--btn sds--btn--ghost--dark sds--btn--small">{props.actionLabel}</button>}
             </div>
-        </div>    );
+        </div>);
 
 };
 

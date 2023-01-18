@@ -15,7 +15,8 @@ const Template: ComponentStory<typeof Alert> = (args) => <Alert {...args} />;
 export const AlertDefault = Template.bind({});
 AlertDefault.args = {
     message: 'Alert default',
-    alertType: AlertType.Default
+    alertType: AlertType.Default,
+    asChild: true
 };
 
 export const AlertWithButton = Template.bind({});
