@@ -16,7 +16,7 @@ export enum AlertType {
 
 export interface AlertProps {
     message: string;
-    alertType: AlertType;
+    alertType?: AlertType;
     close?: React.MouseEventHandler<HTMLButtonElement>;
     action?: React.MouseEventHandler<HTMLButtonElement>;
     actionLabel?: string;
@@ -24,14 +24,16 @@ export interface AlertProps {
 }
 
 const Alert = (props: AlertProps) => {
-    const className = `sds--alert ${props.alertType.toLowerCase()} ${props.action ? "sds--alert--has-action" : ""}`;
+    const alertType = props.alertType || AlertType.Success;
+    const action = props.action ? "sds--alert--has-action" : "";
+    const className = `sds--alert ${alertType.toLowerCase()} ${action}`;
     return (
         <div className={className}>
             <div className={`sds--alert--inner ${props.asChild ? "" : "sds--page-container"}`}>
                 <div className="sds--alert--visual">
-                    {[AlertType.Error, AlertType.Warning].includes(props.alertType) && <AlertIcon/>}
-                    {[AlertType.Default, AlertType.Info].includes(props.alertType) && <InfoIcon/>}
-                    {[AlertType.Success].includes(props.alertType) && <SuccessIcon/>}
+                    {[AlertType.Error, AlertType.Warning].includes(alertType) && <AlertIcon/>}
+                    {[AlertType.Default, AlertType.Info].includes(alertType) && <InfoIcon/>}
+                    {[AlertType.Success].includes(alertType) && <SuccessIcon/>}
                 </div>
                 <div className="sds--alert--textual">
                     <p dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.message)}}/>

@@ -1,40 +1,46 @@
 import React from "react";
-import "./Logo.scss";
+import "./Modal.scss";
 import {ReactComponent as CloseIcon} from "../../icons/functional-icons/close.svg";
 import Alert from "../Alert";
 import Button from "../Button";
+import {AlertType} from "../Alert/Alert";
+import {ButtonType} from "../Button/Button";
 
 export interface ModalProps {
     confirm: Function;
-    cancel: Function;
+    cancel: React.MouseEventHandler<HTMLButtonElement>;
     title: string;
-    subTitle?: string;
     question: string;
+    alertType: AlertType;
+    subTitle?: string;
     confirmDisabled?: boolean;
     confirmationButtonLabel?: string;
     cancelButtonLabel?: string;
 }
 
 const Modal = (props: React.PropsWithChildren<ModalProps>) => {
+    const alertType = props.alertType || AlertType.Info;
     return (
         <div className="sds--modal sds--backdrop">
             <div className="sds--modal--container">
                 <div className="sds--modal--title">
                     <p className="sds--text--h4">{props.title}</p>
-                    <CloseIcon/>
+                    {props.cancel && <span onClick={props.cancel}><CloseIcon/></span>}
                 </div>
-                <Alert />
+                <Alert alertType={alertType} message={props.subTitle || ""} asChild={true}/>
                 <div className="sds--modal--content">
                     <div className="sds--text--rich">
-                        <p>This is an example text that can be replaced when using a simple modal. You can also use a <a
-                            href="#">hyperlink</a> if it’s necessary. For more complex modals we advise you to use a
-                            Blank modal as base.</p>
-                        <p>Second paragraph can be used if there is more text.</p>
+                        <p>{props.question}</p>
+                        {props.children}
                     </div>
                     <div className="sds--modal--actions sds--actions--outer sds--space--top--5">
-                        <Button onClick={cancel} cancelButton={true} txt={}/>
-                        <button type="button" className="sds--btn sds--btn--secondary">Secondary button</button>
-                        <button type="button" className="sds--btn sds--btn--primary">Primary button</button>
+                        {props.cancel && <Button onClick={props.cancel}
+                                                 type={ButtonType.Secondary}
+                                                 txt={props.cancelButtonLabel}/>}
+                        <Button onClick={props.confirm}
+                                type={ButtonType.Primary}
+                                disabled={props.confirmDisabled}
+                                txt={props.confirmationButtonLabel}/>
                     </div>
                 </div>
             </div>

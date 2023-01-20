@@ -1,6 +1,6 @@
 {
   "name": "@surfnet/sds",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "SURF Design System",
   "main": "cjs/index.js",
   "module": "esm/index.js",
@@ -53,6 +53,7 @@
     "@types/dompurify": "^2.4.0",
     "@types/jest": "^28.1.6",
     "@types/react": "^18.0.15",
+    "@types/react-modal": "^3.13.1",
     "babel-jest": "^27.3.1",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.5.1",

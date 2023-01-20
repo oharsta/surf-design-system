@@ -1,10 +1,19 @@
 import React from "react";
 import {render} from "@testing-library/react";
 
-import Modal, {LogoType} from "./Logo";
+import Modal from "./Modal";
+import {AlertType} from "../Alert/Alert";
 
-describe("Logo", () => {
-    test("renders the Logo component", () => {
-        render(<Modal label="Hello world!" position={LogoType.Bottom}/>);
+describe("Modal", () => {
+    test("renders the Modal component", () => {
+        render(<Modal confirm={() => true}
+                      cancel={() => true}
+                      title={"Title"}
+                      question={"Question"}
+                      alertType={AlertType.Info}
+                      subTitle={"subTitle"}
+                      confirmDisabled={true}
+                      confirmationButtonLabel={"Confirm"}
+                      cancelButtonLabel={"Cancel"}/>);
     });
 });
