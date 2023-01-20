@@ -3,7 +3,7 @@ import "./Checkbox.scss";
 import "../Tooltip/TooltipParent.scss";
 import {ReactComponent as LogoIcon} from "../../icons/functional-icons/checkbox-check.svg";
 import DOMPurify from "dompurify";
-import {Tooltip} from "../index";
+import Tooltip from "../Tooltip/index";
 
 export interface CheckboxProps {
     name: string;

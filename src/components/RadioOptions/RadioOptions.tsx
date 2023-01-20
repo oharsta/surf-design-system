@@ -1,7 +1,7 @@
 import React from "react";
 import "./RadioOptions.scss";
 import "../Tooltip/TooltipParent.scss";
-import {Tooltip} from "../index";
+import Tooltip from "../Tooltip/index";
 
 export interface RadioOptionsProps {
     trueLabel: string;

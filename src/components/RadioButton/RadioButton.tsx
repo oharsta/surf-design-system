@@ -1,5 +1,5 @@
-import React, {ChangeEvent} from "react";
-import {Tooltip} from "../index";
+import React from "react";
+import Tooltip from "../Tooltip/index";
 import "../Tooltip/TooltipParent.scss";
 
 

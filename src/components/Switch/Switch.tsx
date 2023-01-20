@@ -1,7 +1,7 @@
 import React from "react";
 import "./Switch.scss";
 import "../Tooltip/TooltipParent.scss";
-import {Tooltip} from "../index";
+import Tooltip from "../Tooltip/index";
 
 export interface SwitchProps {
     name: string;
