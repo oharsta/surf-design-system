@@ -1,7 +1,8 @@
 import React from "react";
 import {render} from "@testing-library/react";
 
-import Alert, {AlertType} from './Alert';
+import Alert from './Alert';
+import AlertType from "./AlertType";
 
 describe("Alert", () => {
     test("renders the Alert component", () => {

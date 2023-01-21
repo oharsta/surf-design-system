@@ -1,7 +1,8 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 
-import Logo, {LogoType} from './Logo';
+import Logo from './Logo';
+import LogoType from "./LogoType";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

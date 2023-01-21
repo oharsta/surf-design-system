@@ -3,21 +3,8 @@ import "./Button.scss";
 import {ReactComponent as BinIcon} from "../../icons/functional-icons/bin.svg";
 import {stopEvent} from "../../common/utils";
 import DOMPurify from "dompurify";
-
-export enum ButtonType {
-    Primary = "sds--btn--primary",
-    Secondary = "sds--btn--secondary",
-    Tertiary = "sds--btn--tertiary",
-    GhostDark = "sds--btn--ghost--dark",
-    GhostLight = "sds--btn--ghost--light",
-    Delete = "sds--btn--delete"
-}
-
-export enum ButtonSize {
-    Default = "",
-    Small = "sds--btn--small",
-    Full = "sds--btn--full",
-}
+import ButtonType from "./ButtonType";
+import ButtonSize from "./ButtonSize";
 
 export interface ButtonProps {
     onClick?: Function;

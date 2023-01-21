@@ -2,7 +2,7 @@ import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 
 import Modal from './Modal';
-import {AlertType} from "../Alert/Alert";
+import AlertType from "../Alert/AlertType";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -29,14 +29,22 @@ ModalTemplate.args = {
 };
 
 export const ModalTemplateConfirmDisabled = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
 ModalTemplateConfirmDisabled.args = {
     confirm: () => true,
+    cancel: () => true,
     title: "Title",
     question: "Question.",
     alertType: AlertType.Error,
-    confirmDisabled: false,
-    confirmationButtonLabel: "Ok",
+    confirmDisabled: true,
+    confirmationButtonLabel: "Submit",
     cancelButtonLabel: "Cancel"
+};
 
+export const ModalTemplateNoCancel = Template.bind({});
+ModalTemplateNoCancel.args = {
+    confirm: () => true,
+    title: "Title",
+    question: "Question.",
+    alertType: AlertType.Warning,
+    confirmationButtonLabel: "Ok",
 };

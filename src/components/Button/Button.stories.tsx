@@ -1,7 +1,9 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 
-import Button, {ButtonType, defaultButtonProps} from './Button';
+import Button, {defaultButtonProps} from './Button';
+import ButtonType from "./ButtonType";
+import ButtonSize from "./ButtonSize";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -19,6 +21,20 @@ export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
     txt: 'Default'
+};
+
+export const DefaultSmall = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+DefaultSmall.args = {
+    txt: 'Small',
+    size: ButtonSize.Small
+};
+
+export const DefaultFull = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+DefaultFull.args = {
+    txt: 'Full with a lot of text',
+    size: ButtonSize.Full
 };
 
 export const PrimaryDisabled = Template.bind({});

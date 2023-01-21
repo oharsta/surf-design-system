@@ -1,10 +1,10 @@
 import React from "react";
 import "./Modal.scss";
 import {ReactComponent as CloseIcon} from "../../icons/functional-icons/close.svg";
-import Alert from "../Alert";
-import Button from "../Button";
-import {AlertType} from "../Alert/Alert";
-import {ButtonType} from "../Button/Button";
+import Alert from "../Alert/Alert";
+import Button from "../Button/Button";
+import AlertType from "../Alert/AlertType";
+import ButtonType from "../Button/ButtonType";
 
 export interface ModalProps {
     confirm: Function;

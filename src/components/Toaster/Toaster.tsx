@@ -4,14 +4,7 @@ import {ReactComponent as InfoIcon} from "../../icons/functional-icons/info.svg"
 import {ReactComponent as SuccessIcon} from "../../icons/functional-icons/success.svg";
 import {ReactComponent as AlertIcon} from "../../icons/functional-icons/alert-triangle.svg";
 import DOMPurify from "dompurify";
-
-export enum ToasterType {
-    Default = "sds--toaster--status-default",
-    Success = "sds--toaster--status-success",
-    Warning = "sds--toaster--status-warning",
-    Error = "sds--toaster--status-error",
-    Info = "sds--toaster--status-info",
-}
+import ToasterType from "./ToasterType";
 
 export interface ToasterProps {
     message: string;

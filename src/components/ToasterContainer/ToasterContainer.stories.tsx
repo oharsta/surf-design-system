@@ -1,9 +1,9 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 
-import Toaster from '../Toaster';
+import Toaster from '../Toaster/Toaster';
 import ToasterContainer from "./ToasterContainer";
-import {ToasterType} from "../Toaster/Toaster";
+import ToasterType from "../Toaster/ToasterType";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

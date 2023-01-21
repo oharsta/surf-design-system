@@ -2,7 +2,7 @@ import React from "react";
 import {render} from "@testing-library/react";
 
 import Modal from "./Modal";
-import {AlertType} from "../Alert/Alert";
+import AlertType from "../Alert/AlertType";
 
 describe("Modal", () => {
     test("renders the Modal component", () => {
