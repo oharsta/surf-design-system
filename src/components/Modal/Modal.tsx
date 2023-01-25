@@ -16,13 +16,14 @@ export interface ModalProps {
     confirmDisabled?: boolean;
     confirmationButtonLabel?: string;
     cancelButtonLabel?: string;
+    full?: boolean;
 }
 
 const Modal = (props: React.PropsWithChildren<ModalProps>) => {
     const alertType = props.alertType || AlertType.Info;
     return (
         <div className="sds--modal sds--backdrop">
-            <div className="sds--modal--container">
+            <div className={`sds--modal--container ${props.full ? "full" : ""}`}>
                 <div className="sds--modal--title">
                     <p className="sds--text--h4">{props.title}</p>
                     {props.cancel && <span onClick={props.cancel}><CloseIcon/></span>}

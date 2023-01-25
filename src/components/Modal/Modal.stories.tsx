@@ -24,7 +24,8 @@ ModalTemplate.args = {
     subTitle: "subTitle",
     confirmDisabled: false,
     confirmationButtonLabel: "Confirm",
-    cancelButtonLabel: "Cancel"
+    cancelButtonLabel: "Cancel",
+    full: true
 
 };
 

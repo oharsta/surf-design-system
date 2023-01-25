@@ -26,7 +26,7 @@ TooltipChildrenTemplate.args = {
     tip: "<strong>Strong</strong> long tip with html in it. <a href='https://google.com' target='_blank'>Click me</a> please",
     clickable: true,
     anchorId: "3",
-    children: <AlarmBellIcon id={"3"}/>
+    children: <AlarmBellIcon />
 };
 
 export const TooltipLong = Template.bind({});

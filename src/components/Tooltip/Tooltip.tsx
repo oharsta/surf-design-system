@@ -15,7 +15,11 @@ const Tooltip = (props: React.PropsWithChildren<TooltipProps>) => {
     const uniqueAnchorId = props.anchorId || pseudoGuid();
     return (
         <div className="sds--tooltip-container">
-            {props.children ? props.children : <InfoIcon id={uniqueAnchorId}/>}
+            {props.children ? React.Children.map(props.children, (child: any) =>
+                React.cloneElement(child, {
+                    id: uniqueAnchorId
+                })
+            ) : <InfoIcon id={uniqueAnchorId}/>}
             <ReactTooltip anchorId={uniqueAnchorId}
                           clickable={props.clickable || false}
                           html={DOMPurify.sanitize(props.tip)}/>

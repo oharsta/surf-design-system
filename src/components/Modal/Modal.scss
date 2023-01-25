@@ -1,5 +1,8 @@
 .sds--modal {
   &--container {
     min-width: 22.875rem;
+    &.full {
+      max-width: 65.875rem;
+    }
   }
 }
