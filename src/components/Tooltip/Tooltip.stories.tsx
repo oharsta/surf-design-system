@@ -1,5 +1,6 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
+import {ReactComponent as AlarmBellIcon} from "../../icons/functional-icons/alarm-bell.svg";
 
 import Tooltip from './Tooltip';
 
@@ -18,6 +19,14 @@ TooltipTemplate.args = {
     tip: "<strong>Strong</strong> long tip with html in it. <a href='https://google.com' target='_blank'>Click me</a> please",
     clickable: true,
     anchorId: "1"
+};
+
+export const TooltipChildrenTemplate = Template.bind({});
+TooltipChildrenTemplate.args = {
+    tip: "<strong>Strong</strong> long tip with html in it. <a href='https://google.com' target='_blank'>Click me</a> please",
+    clickable: true,
+    anchorId: "3",
+    children: <AlarmBellIcon id={"3"}/>
 };
 
 export const TooltipLong = Template.bind({});

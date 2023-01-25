@@ -8,14 +8,14 @@ import {pseudoGuid} from "../../common/utils";
 export interface TooltipProps {
     tip: string;
     anchorId?: string;
-    clickable?: boolean
+    clickable?: boolean;
 }
 
-const Tooltip = (props: TooltipProps) => {
+const Tooltip = (props: React.PropsWithChildren<TooltipProps>) => {
     const uniqueAnchorId = props.anchorId || pseudoGuid();
     return (
         <div className="sds--tooltip-container">
-            <InfoIcon id={uniqueAnchorId}/>
+            {props.children ? props.children : <InfoIcon id={uniqueAnchorId}/>}
             <ReactTooltip anchorId={uniqueAnchorId}
                           clickable={props.clickable || false}
                           html={DOMPurify.sanitize(props.tip)}/>
