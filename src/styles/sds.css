@@ -1428,7 +1428,7 @@ input[type=radio]:disabled:checked + label .sds--radio--visual:before {
     margin-bottom: var(--sds--space--1)
 }
 
-.sds--text-field input.sds--text-field--input {
+.sds--text-field input.sds--text-field--input, .sds--text-field textarea.sds--text-field--input {
     width: 100%;
     min-height: 3rem;
     padding: var(--sds--space--1-and-a-half);
@@ -1436,24 +1436,24 @@ input[type=radio]:disabled:checked + label .sds--radio--visual:before {
     border-radius: .375rem
 }
 
-.sds--text-field input.sds--text-field--input::-moz-placeholder {
+.sds--text-field input.sds--text-field--input::-moz-placeholder, .sds--text-field textarea.sds--text-field--input::-moz-placeholder {
     opacity: 1
 }
 
-.sds--text-field input.sds--text-field--input::placeholder {
+.sds--text-field input.sds--text-field--input::placeholder, .sds--text-field textarea.sds--text-field--input::placeholder {
     opacity: 1;
     color: var(--sds--color--gray--400)
 }
 
-.sds--text-field input.sds--text-field--input:not(:disabled) {
+.sds--text-field input.sds--text-field--input:not(:disabled), .sds--text-field textarea.sds--text-field--input:not(:disabled) {
     border-color: var(--sds--color--gray--400)
 }
 
-.sds--text-field input.sds--text-field--input:not(:disabled):hover {
+.sds--text-field input.sds--text-field--input:not(:disabled):hover, .sds--text-field textarea.sds--text-field--input:not(:disabled):hover {
     border-color: var(--sds--color--black)
 }
 
-.sds--text-field input.sds--text-field--input:disabled {
+.sds--text-field input.sds--text-field--input:disabled, .sds--text-field textarea.sds--text-field--input:disabled {
     background-color: var(--sds--color--gray--100);
     border-color: var(--sds--color--gray--100)
 }
