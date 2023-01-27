@@ -9,13 +9,13 @@ export interface TooltipProps {
     tip: string;
     anchorId?: string;
     clickable?: boolean;
-    sibbling? :boolean;
+    standalone? :boolean;
 }
 
 const Tooltip = (props: React.PropsWithChildren<TooltipProps>) => {
     const uniqueAnchorId = props.anchorId || pseudoGuid();
     return (
-        <div className={`sds--tooltip-container ${props.sibbling ? "sibbling" : ""}`}>
+        <div className={`sds--tooltip-container ${props.standalone ? "" : "sibbling"}`}>
             {props.children ? React.Children.map(props.children, (child: any) =>
                 React.cloneElement(child, {
                     id: uniqueAnchorId
