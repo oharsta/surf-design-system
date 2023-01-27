@@ -8,7 +8,7 @@ export { default as Checkbox } from "./Checkbox";
 export { default as Chip } from "./Chip";
 export { default as LanguageSwitcher } from "./LanguageSwitcher";
 export { default as Logo } from "./Logo/Logo";
-export { default as LogoTyoe } from "./Logo/LogoType";
+export { default as LogoType } from "./Logo/LogoType";
 export { default as Modal } from "./Modal";
 export { default as Pagination } from "./Pagination";
 export { default as RadioButton } from "./RadioButton";

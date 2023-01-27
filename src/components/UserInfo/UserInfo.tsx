@@ -1,7 +1,6 @@
 import React from "react";
 import "./UserInfo.scss";
 import {ReactComponent as ArrowDownIcon} from "../../icons/functional-icons/arrow-down-2.svg";
-import {ReactComponent as ArrowUpIcon} from "../../icons/functional-icons/arrow-up-2.svg";
 
 export interface UserInfoProps {
     userName: string;
@@ -19,7 +18,7 @@ const UserInfo = (props: React.PropsWithChildren<UserInfoProps>) => {
                 <p className="role sds--text--body--small">{props.organisationName}</p>
             </div>
             <button type="button" className="sds--user-info--button" onClick={props.toggle}>
-                {props.isOpen ? <ArrowUpIcon/> : <ArrowDownIcon/>}
+                <ArrowDownIcon/>
             </button>
             <div className="sds--user-info--dropdown">
                 {props.children && props.children}
