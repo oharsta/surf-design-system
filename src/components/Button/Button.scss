@@ -1,5 +1,7 @@
 .sds--btn {
   &.sds--btn--delete {
+    padding: 0;
+
     svg path {
       stroke-width: 1.5;
     }

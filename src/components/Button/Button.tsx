@@ -45,8 +45,8 @@ const Button = (props: ButtonProps) => {
                 className={className}
                 onClick={onClickInternal}
                 disabled={props.disabled}>
-            <span className="textual"
-                  dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.txt || "")}}/>
+            {props.txt && <span className="textual"
+                  dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.txt || "")}}/>}
             {props.type === ButtonType.Delete ? <BinIcon/> : props.icon}
         </button>);
 };
