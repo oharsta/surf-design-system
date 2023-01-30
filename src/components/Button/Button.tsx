@@ -13,7 +13,9 @@ export interface ButtonProps {
     type?: ButtonType;
     icon?: any;
     size?: ButtonSize;
-    centralize?: boolean
+    centralize?: boolean;
+    anchorId?: string;
+
 }
 
 export const defaultButtonProps: ButtonProps = {
@@ -39,6 +41,7 @@ const Button = (props: ButtonProps) => {
 
     return (
         <button type="button"
+                id={props.anchorId}
                 className={className}
                 onClick={onClickInternal}
                 disabled={props.disabled}>

@@ -17,7 +17,7 @@ const Tooltip = (props: React.PropsWithChildren<TooltipProps>) => {
     return (
         <div className={`sds--tooltip-container ${props.standalone ? "" : "sibbling"}`}>
             {props.children ? React.Children.map(props.children, (child: any) =>
-                React.cloneElement(child, {
+                child.id ? child : React.cloneElement(child, {
                     id: uniqueAnchorId
                 })
             ) : <InfoIcon id={uniqueAnchorId}/>}

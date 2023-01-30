@@ -3,6 +3,7 @@ import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {ReactComponent as AlarmBellIcon} from "../../icons/functional-icons/alarm-bell.svg";
 
 import Tooltip from './Tooltip';
+import {Button} from "../Button";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -27,6 +28,14 @@ TooltipChildrenTemplate.args = {
     clickable: true,
     anchorId: "3",
     children: <AlarmBellIcon />
+};
+
+export const TooltipButtonTemplate = Template.bind({});
+TooltipButtonTemplate.args = {
+    tip: "Does this show",
+    clickable: true,
+    anchorId: "unique-id",
+    children: <Button onClick={()=> true} txt={"Click me"} anchorId={"unique-id"}/>
 };
 
 export const TooltipLong = Template.bind({});
