@@ -8,3 +8,21 @@
   height: calc(12em / 16);
 }
 
+.sds--alert {
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 6;
+  opacity: .97;
+
+  transition: top 150ms ease-in-out;
+
+  &.hide {
+    transition: top 1000ms ease-in-out;
+    top: -80px;
+    position: absolute;
+  }
+
+}
+
+

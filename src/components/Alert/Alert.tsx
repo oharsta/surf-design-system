@@ -14,12 +14,13 @@ export interface AlertProps {
     action?: React.MouseEventHandler<HTMLButtonElement>;
     actionLabel?: string;
     asChild?: boolean;
+    hide?: boolean;
 }
 
 const Alert = (props: AlertProps) => {
     const alertType = props.alertType || AlertType.Success;
     const action = props.action ? "sds--alert--has-action" : "";
-    const className = `sds--alert ${alertType.toLowerCase()} ${action}`;
+    const className = `sds--alert ${alertType.toLowerCase()} ${action} ${props.hide ? "hide" : ""}`;
     return (
         <div className={className}>
             <div className={`sds--alert--inner ${props.asChild ? "" : "sds--page-container"}`}>
