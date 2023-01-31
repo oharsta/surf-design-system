@@ -1,4 +1,10 @@
 .sds--radio-options {
+  .sds--tooltip-parent span {
+    display: block;
+    font-weight: 600;
+    margin-bottom: var(--sds--space--1);
+  }
+
   .sds--text-field-container {
     display: flex;
     gap: 0 50px;

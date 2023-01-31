@@ -38,6 +38,17 @@ NoEnabled.args = {
     tooltip: "Lorum Ipsum"
 };
 
+export const EmptyState = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+EmptyState.args = {
+    label: "SURF Organisation",
+    name: "Checked",
+    value: null,
+    onChange: () => true,
+    disabled: false,
+    tooltip: "Lorum Ipsum"
+};
+
 export const Disabled = Template.bind({});
 Disabled.args = {
     label: "Disabled",

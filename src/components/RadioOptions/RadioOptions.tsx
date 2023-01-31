@@ -8,8 +8,8 @@ export interface RadioOptionsProps {
     falseLabel: string;
     label: string;
     name: string;
-    value: boolean;
     onChange: Function;
+    value: boolean | null;
     tooltip?: string;
     disabled?: boolean;
 }
@@ -18,6 +18,13 @@ const RadioOptions = (props: RadioOptionsProps) => {
 
     const internalOnChange = () => {
         props.onChange(!props.value);
+    }
+
+    const isChecked = (label:string) => {
+        if (props.value === null) {
+            return false;
+        }
+        return label === props.trueLabel ? props.value : !props.value;
     }
 
     const className = `sds--radio-options`;
@@ -32,7 +39,7 @@ const RadioOptions = (props: RadioOptionsProps) => {
                     const id = `${props.name}_${label}`;
                     return (
                         <div key={id}>
-                            <input id={id} type="radio" checked={label === props.trueLabel ? props.value : !props.value}
+                            <input id={id} type="radio" checked={isChecked(label)}
                                    disabled={props.disabled} onChange={internalOnChange}/>
                             <label htmlFor={id}>
                                 <span className="sds--radio--visual"/>
