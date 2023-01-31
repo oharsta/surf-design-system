@@ -2,6 +2,7 @@ import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 
 import Checkbox from './Checkbox';
+import {GhostLight} from "../Button/Button.stories";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -41,6 +42,7 @@ CheckedDisabled.args = {
     value: true,
     readOnly: true
 };
+CheckedDisabled.parameters = {backgrounds: { default: 'white' }}
 
 export const NotCheckedDisabled = Template.bind({});
 NotCheckedDisabled.args = {
@@ -50,6 +52,7 @@ NotCheckedDisabled.args = {
     value: false,
     readOnly: true
 };
+NotCheckedDisabled.parameters = {backgrounds: { default: 'white' }}
 
 export const Hidden = Template.bind({});
 Hidden.args = {
