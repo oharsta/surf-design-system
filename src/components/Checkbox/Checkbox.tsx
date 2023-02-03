@@ -35,7 +35,7 @@ const Checkbox = (props: CheckboxProps) => {
                 <span className="sds--checkbox--visual">
                     <LogoIcon/>
                 </span>
-                {props.info && <span className="checkbox--text">{DOMPurify.sanitize(props.info)}</span>}
+                {props.info && <span className="checkbox--text" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.info)}}/>}
             </label>
             {props.tooltip && <Tooltip anchorId={`${props.name}_tooltip`} tip={props.tooltip}/>}
         </div>
