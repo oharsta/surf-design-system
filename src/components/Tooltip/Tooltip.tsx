@@ -14,10 +14,6 @@ export interface TooltipProps {
 
 const Tooltip = (props: React.PropsWithChildren<TooltipProps>) => {
     const uniqueAnchorId = props.anchorId || pseudoGuid();
-    //To accommodate for / map loops when there is no sensible default
-    if (isEmpty(props.tip)) {
-        return null;
-    }
     return (
         <div className={`sds--tooltip-container ${props.standalone ? "" : "sibbling"}`}>
             {props.children ? React.Children.map(props.children, (child: any) =>
