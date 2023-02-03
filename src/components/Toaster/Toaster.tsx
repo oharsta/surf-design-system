@@ -3,8 +3,8 @@ import "./Toaster.scss";
 import {ReactComponent as InfoIcon} from "../../icons/functional-icons/info.svg";
 import {ReactComponent as SuccessIcon} from "../../icons/functional-icons/success.svg";
 import {ReactComponent as AlertIcon} from "../../icons/functional-icons/alert-triangle.svg";
-import DOMPurify from "dompurify";
 import ToasterType from "./ToasterType";
+import {sanitize} from "../../common/utils";
 
 export interface ToasterProps {
     message: string;
@@ -23,7 +23,7 @@ const Toaster = (props: ToasterProps) => {
                 {[ToasterType.Success].includes(props.toasterType) && <SuccessIcon/>}
             </div>
             <div className="sds--toaster--textual">
-                <p dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.message)}}/>
+                <p dangerouslySetInnerHTML={{__html: sanitize(props.message)}}/>
                 {props.action &&
                 <button type="button"
                         onClick={props.action}

@@ -5,7 +5,7 @@ import Alert from "../Alert/Alert";
 import Button from "../Button/Button";
 import AlertType from "../Alert/AlertType";
 import ButtonType from "../Button/ButtonType";
-import DOMPurify from "dompurify";
+import {sanitize} from "../../common/utils";
 
 export interface ModalProps {
     confirm: Function;
@@ -32,7 +32,7 @@ const Modal = (props: React.PropsWithChildren<ModalProps>) => {
                 <Alert alertType={alertType} message={props.subTitle || ""} asChild={true}/>
                 <div className="sds--modal--content">
                     <div className="sds--text--rich">
-                        <p dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.question)}}/>
+                        <p dangerouslySetInnerHTML={{__html: sanitize(props.question)}}/>
                         {props.children}
                     </div>
                     <div className="sds--modal--actions sds--actions--outer sds--space--top--5">

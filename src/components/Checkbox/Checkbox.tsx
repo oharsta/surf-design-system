@@ -2,8 +2,8 @@ import React, {ChangeEvent} from "react";
 import "./Checkbox.scss";
 import "../Tooltip/TooltipParent.scss";
 import {ReactComponent as LogoIcon} from "../../icons/functional-icons/checkbox-check.svg";
-import DOMPurify from "dompurify";
 import Tooltip from "../Tooltip/index";
+import {sanitize} from "../../common/utils";
 
 export interface CheckboxProps {
     name: string;
@@ -35,7 +35,8 @@ const Checkbox = (props: CheckboxProps) => {
                 <span className="sds--checkbox--visual">
                     <LogoIcon/>
                 </span>
-                {props.info && <span className="checkbox--text" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.info)}}/>}
+                {props.info &&
+                <span className="checkbox--text" dangerouslySetInnerHTML={{__html: sanitize(props.info)}}/>}
             </label>
             {props.tooltip && <Tooltip anchorId={`${props.name}_tooltip`} tip={props.tooltip}/>}
         </div>

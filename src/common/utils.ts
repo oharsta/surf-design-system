@@ -1,3 +1,5 @@
+import DOMPurify from "dompurify";
+
 export function stopEvent(e: Event) {
     if (e !== undefined && e !== null) {
         e.preventDefault();
@@ -27,4 +29,8 @@ const S4 = () => (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1)
 
 export function pseudoGuid() {
     return (S4() + S4() + "-" + S4() + "-4" + S4().substring(0, 3) + "-" + S4() + "-" + S4() + S4() + S4()).toLowerCase();
+}
+
+export function sanitize(text: string) {
+    return DOMPurify.sanitize(text, {ADD_ATTR: ["target"]})
 }

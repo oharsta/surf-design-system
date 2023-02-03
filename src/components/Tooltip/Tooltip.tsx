@@ -2,14 +2,13 @@ import React from "react";
 import "./Tooltip.scss";
 import {Tooltip as ReactTooltip} from "react-tooltip";
 import {ReactComponent as InfoIcon} from "../../icons/functional-icons/info.svg";
-import DOMPurify from "dompurify";
-import {isEmpty, pseudoGuid} from "../../common/utils";
+import {pseudoGuid, sanitize} from "../../common/utils";
 
 export interface TooltipProps {
     tip: string;
     anchorId?: string;
     clickable?: boolean;
-    standalone? :boolean;
+    standalone?: boolean;
 }
 
 const Tooltip = (props: React.PropsWithChildren<TooltipProps>) => {
@@ -23,7 +22,7 @@ const Tooltip = (props: React.PropsWithChildren<TooltipProps>) => {
             ) : <InfoIcon id={uniqueAnchorId}/>}
             <ReactTooltip anchorId={uniqueAnchorId}
                           clickable={props.clickable || false}
-                          html={DOMPurify.sanitize(props.tip)}/>
+                          html={sanitize(props.tip)}/>
         </div>
     );
 };

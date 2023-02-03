@@ -1,8 +1,7 @@
 import React from "react";
 import "./Button.scss";
 import {ReactComponent as BinIcon} from "../../icons/functional-icons/bin.svg";
-import {stopEvent} from "../../common/utils";
-import DOMPurify from "dompurify";
+import {sanitize, stopEvent} from "../../common/utils";
 import ButtonType from "./ButtonType";
 import ButtonSize from "./ButtonSize";
 
@@ -46,7 +45,7 @@ const Button = (props: ButtonProps) => {
                 onClick={onClickInternal}
                 disabled={props.disabled}>
             {props.txt && <span className="textual"
-                  dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.txt || "")}}/>}
+                                dangerouslySetInnerHTML={{__html: sanitize(props.txt || "")}}/>}
             {props.type === ButtonType.Delete ? <BinIcon/> : props.icon}
         </button>);
 };

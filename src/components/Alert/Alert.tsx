@@ -4,8 +4,9 @@ import {ReactComponent as InfoIcon} from "../../icons/functional-icons/info.svg"
 import {ReactComponent as SuccessIcon} from "../../icons/functional-icons/success.svg";
 import {ReactComponent as AlertIcon} from "../../icons/functional-icons/alert-triangle.svg";
 import {ReactComponent as CloseIcon} from "../../icons/functional-icons/close.svg";
-import DOMPurify from "dompurify";
+
 import AlertType from "./AlertType";
+import {sanitize} from "../../common/utils";
 
 export interface AlertProps {
     message: string;
@@ -30,7 +31,7 @@ const Alert = (props: AlertProps) => {
                     {[AlertType.Success].includes(alertType) && <SuccessIcon/>}
                 </div>
                 <div className="sds--alert--textual">
-                    <p dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.message)}}/>
+                    <p dangerouslySetInnerHTML={{__html: sanitize(props.message)}}/>
                     {props.action &&
                     <button type="button"
                             onClick={props.action}
