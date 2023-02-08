@@ -5,7 +5,7 @@ import React from 'react';
 
 export const decorators = [
   (Story) => (
-    <div className={"sds--page-container sds--color-palette--blue"}>
+    <div className={"sds--page-container sds--color-palette--orange"}>
       <Story />
     </div>
   ),
