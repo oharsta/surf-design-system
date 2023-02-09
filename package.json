@@ -1,6 +1,6 @@
 {
   "name": "@surfnet/sds",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "description": "SURF Design System",
   "main": "cjs/index.js",
   "module": "esm/index.js",
@@ -19,7 +19,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "rm -rf dist && rollup -c && cp package.json README.md ./dist && cp -R src/styles dist/ && cp -R src/fonts dist/",
+    "build": "rm -rf dist && rollup -c && cp package.json README.md ./dist && cp -R src/styles dist/ && cp -R src/fonts dist/ && cp -R src/icons dist/",
     "test": "jest",
     "clean": "rm -rf dist",
     "storybook": "start-storybook -p 6006",
