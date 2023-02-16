@@ -1,6 +1,7 @@
 import DOMPurify from "dompurify";
+import {ChangeEvent} from "react";
 
-export function stopEvent(e: Event) {
+export function stopEvent(e: ChangeEvent) {
     if (e !== undefined && e !== null) {
         e.preventDefault();
         e.stopPropagation();

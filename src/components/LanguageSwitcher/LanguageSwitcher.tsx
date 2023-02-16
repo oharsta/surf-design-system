@@ -1,4 +1,4 @@
-import React from "react";
+import React, {ChangeEvent} from "react";
 import "./LanguageSwitcher.scss";
 import {stopEvent} from "../../common/utils";
 
@@ -10,7 +10,7 @@ export interface LanguageSwitcherProps {
 
 const LanguageSwitcher = (props: LanguageSwitcherProps) => {
 
-    const onLanguageSwitchInner = (e: Event, lang: string) => {
+    const onLanguageSwitchInner = (e: ChangeEvent, lang: string) => {
         stopEvent(e);
         props.onLanguageSwitch(lang);
     }
