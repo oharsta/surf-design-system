@@ -1,4 +1,4 @@
-import React from "react";
+import React, {ChangeEventHandler} from "react";
 import "./RadioOptions.scss";
 import "../Tooltip/TooltipParent.scss";
 import Tooltip from "../Tooltip/index";
@@ -8,17 +8,13 @@ export interface RadioOptionsProps {
     falseLabel: string;
     label: string;
     name: string;
-    onChange: Function;
+    onChange: ChangeEventHandler;
     value: boolean | null;
     tooltip?: string;
     disabled?: boolean;
 }
 
 const RadioOptions = (props: RadioOptionsProps) => {
-
-    const internalOnChange = () => {
-        props.onChange(!props.value);
-    }
 
     const isChecked = (label:string) => {
         if (props.value === null) {
@@ -39,8 +35,8 @@ const RadioOptions = (props: RadioOptionsProps) => {
                     const id = `${props.name}_${label}`;
                     return (
                         <div key={id}>
-                            <input id={id} type="radio" checked={isChecked(label)}
-                                   disabled={props.disabled} onChange={internalOnChange}/>
+                            <input id={id} type="radio" name={props.name} checked={isChecked(label)}
+                                   disabled={props.disabled} onChange={props.onChange}/>
                             <label htmlFor={id}>
                                 <span className="sds--radio--visual"/>
                                 <span className="sds--radio--text">{label}</span>
