@@ -14,7 +14,7 @@ const SegmentedControl = (props: SegmentedControlProps) => {
 
     return (
         <div className={"sds--segmented-control"}>
-            {props.options.map((option: string, index: number) =>
+            {props.options.map((option: string) =>
                 <Button txt={option}
                         disabled={props.disabled}
                         onClick={props.onClick}

@@ -16,6 +16,11 @@
       border-radius: 0;
       border-right: none;
     }
+
+    &.sds--btn--primary + .sds--btn--secondary {
+      border-left: none;
+    }
   }
+
 
 }
