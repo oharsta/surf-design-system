@@ -28,3 +28,12 @@ Disabled.args = {
     disabled: true,
     options: ["first", "second", "third"]
 };
+
+export const OptionLabelResolver = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+OptionLabelResolver.args = {
+    onClick: () => true,
+    option: "second",
+    optionLabelResolver: (option : string) =>  `${option}_txt`,
+    options: ["first", "second", "third", "fourth"]
+};
