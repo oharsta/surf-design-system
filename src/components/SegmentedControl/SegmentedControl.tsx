@@ -16,6 +16,7 @@ const SegmentedControl = (props: SegmentedControlProps) => {
         <div className={"sds--segmented-control"}>
             {props.options.map((option: string) =>
                 <Button txt={option}
+                        key={option}
                         disabled={props.disabled}
                         onClick={props.onClick}
                         type={(props.option === option && !props.disabled) ? ButtonType.Primary : ButtonType.Secondary}
