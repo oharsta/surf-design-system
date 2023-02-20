@@ -1,6 +1,7 @@
 import React, {ChangeEventHandler} from "react";
 import Tooltip from "../Tooltip/index";
 import "../Tooltip/TooltipParent.scss";
+import {pseudoGuid} from "../../common/utils";
 
 
 export interface RadioButtonProps {
@@ -13,17 +14,21 @@ export interface RadioButtonProps {
 }
 
 const RadioButton = (props: RadioButtonProps) => {
-
-    const className = `sds--radio-container sds--tooltip-parent`;
+    const id = pseudoGuid();
+    const className = `sds--radio-container ${props.tooltip ? "sds--tooltip-parent": ""}`
     return (
         <div className={className}>
-            <input id={props.name} name={props.name} type="radio" checked={props.value} disabled={props.disabled}
+            <input id={id}
+                   name={props.name}
+                   type="radio"
+                   checked={props.value}
+                   disabled={props.disabled}
                    onChange={props.onChange}/>
-            <label htmlFor="unique-radio-id">
+            <label htmlFor={id}>
                 <span className="sds--radio--visual"/>
                 <span className="sds--radio--text">{props.label}</span>
             </label>
-            {props.tooltip && <Tooltip anchorId={`${props.name}_tooltip`} tip={props.tooltip}/>}
+            {props.tooltip && <Tooltip anchorId={`${id}_tooltip`} tip={props.tooltip}/>}
         </div>
     );
 };
