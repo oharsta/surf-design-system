@@ -6,7 +6,8 @@ export enum ButtonType {
     Tertiary = "sds--btn--tertiary",
     GhostDark = "sds--btn--ghost--dark",
     GhostLight = "sds--btn--ghost--light",
-    Delete = "sds--btn--delete"
+    Delete = "sds--btn--delete",
+    DeleteSecondary = "sds--btn--delete--secondary"
 }
 
 export default ButtonType;

@@ -7,7 +7,11 @@
     }
 
     &:hover {
-      color: var(--sds--color--red--500);
+      color: var(--sds--palette--main-color--500);
     }
+  }
+
+  &.sds--btn--delete--secondary {
+      color: var(--sds--palette--main-color--500);
   }
 }

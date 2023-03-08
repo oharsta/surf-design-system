@@ -75,6 +75,12 @@ DeleteButton.args = {
     type: ButtonType.Delete
 };
 
+export const DeleteSecondaryButton = Template.bind({});
+DeleteSecondaryButton.args = {
+    type: ButtonType.DeleteSecondary,
+    txt: 'Delete me'
+};
+
 export const GhostLight = Template.bind({});
 GhostLight.args = {
     txt: 'GhostLight',

@@ -12,7 +12,7 @@ export interface ModalProps {
     cancel: React.MouseEventHandler<HTMLButtonElement>;
     title: string;
     question: string;
-    alertType: AlertType;
+    alertType?: AlertType;
     subTitle?: string;
     confirmDisabled?: boolean;
     confirmationButtonLabel?: string;
@@ -29,7 +29,7 @@ const Modal = (props: React.PropsWithChildren<ModalProps>) => {
                     <p className="sds--text--h4">{props.title}</p>
                     {props.cancel && <span onClick={props.cancel}><CloseIcon/></span>}
                 </div>
-                <Alert alertType={alertType} message={props.subTitle || ""} asChild={true}/>
+                {props.alertType && <Alert alertType={alertType} message={props.subTitle || ""} asChild={true}/>}
                 <div className="sds--modal--content">
                     <div className="sds--text--rich">
                         <p dangerouslySetInnerHTML={{__html: sanitize(props.question)}}/>

@@ -46,6 +46,5 @@ ModalTemplateNoCancel.args = {
     confirm: () => true,
     title: "Title",
     question: "Question.",
-    alertType: AlertType.Warning,
     confirmationButtonLabel: "Ok",
 };

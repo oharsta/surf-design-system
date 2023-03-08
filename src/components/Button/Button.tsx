@@ -27,7 +27,8 @@ export const defaultButtonProps: ButtonProps = {
 }
 
 const Button = (props: ButtonProps) => {
-    const type = `${(props.type || ButtonType.Primary).toLowerCase()}`
+    const type = `${(props.type || ButtonType.Primary).toLowerCase()} ` +
+                    `${props.type && props.type === ButtonType.DeleteSecondary ? ButtonType.Secondary.toLowerCase() : ""}`
     const size = `${(props.size || ButtonSize.Default).toLowerCase()}`
     const className = `sds--btn ${type} ${size}`
 
