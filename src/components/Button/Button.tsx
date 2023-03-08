@@ -4,6 +4,7 @@ import {ReactComponent as BinIcon} from "../../icons/functional-icons/bin.svg";
 import {sanitize, stopEvent} from "../../common/utils";
 import ButtonType from "./ButtonType";
 import ButtonSize from "./ButtonSize";
+import {ChipProps} from "../Chip/Chip";
 
 export interface ButtonProps {
     onClick?: Function;
@@ -26,7 +27,7 @@ export const defaultButtonProps: ButtonProps = {
     size: ButtonSize.Default
 }
 
-const Button = (props: ButtonProps) => {
+const Button = (props: React.PropsWithChildren<ButtonProps>) => {
     const type = `${(props.type || ButtonType.Primary).toLowerCase()} ` +
                     `${props.type && props.type === ButtonType.DeleteSecondary ? ButtonType.Secondary.toLowerCase() : ""}`
     const size = `${(props.size || ButtonSize.Default).toLowerCase()}`
@@ -45,6 +46,7 @@ const Button = (props: ButtonProps) => {
                 className={className}
                 onClick={onClickInternal}
                 disabled={props.disabled}>
+            {props.children}
             {props.txt && <span className="textual"
                                 dangerouslySetInnerHTML={{__html: sanitize(props.txt || "")}}/>}
             {props.type === ButtonType.Delete ? <BinIcon/> : props.icon}

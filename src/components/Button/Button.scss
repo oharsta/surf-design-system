@@ -14,4 +14,9 @@
   &.sds--btn--delete--secondary {
       color: var(--sds--palette--main-color--500);
   }
+
+  svg {
+    width: calc(11.25em/16);
+    height: calc(5.47em/16)
+  }
 }
