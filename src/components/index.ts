@@ -11,6 +11,7 @@ export { default as Logo } from "./Logo/Logo";
 export { default as LogoType } from "./Logo/LogoType";
 export { default as LogoColor } from "./Logo/LogoColor";
 export { default as Modal } from "./Modal/Modal";
+export { default as MenuButton } from "./MenuButton/MenuButton";
 export { default as Pagination } from "./Pagination/Pagination";
 export { default as RadioButton } from "./RadioButton/RadioButton";
 export { default as RadioOptions } from "./RadioOptions/RadioOptions";

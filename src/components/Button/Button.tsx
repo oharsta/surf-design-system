@@ -4,7 +4,6 @@ import {ReactComponent as BinIcon} from "../../icons/functional-icons/bin.svg";
 import {sanitize, stopEvent} from "../../common/utils";
 import ButtonType from "./ButtonType";
 import ButtonSize from "./ButtonSize";
-import {ChipProps} from "../Chip/Chip";
 
 export interface ButtonProps {
     onClick?: Function;
@@ -29,9 +28,10 @@ export const defaultButtonProps: ButtonProps = {
 
 const Button = (props: React.PropsWithChildren<ButtonProps>) => {
     const type = `${(props.type || ButtonType.Primary).toLowerCase()} ` +
-                    `${props.type && props.type === ButtonType.DeleteSecondary ? ButtonType.Secondary.toLowerCase() : ""}`
+        `${props.type && props.type === ButtonType.DeleteSecondary ? ButtonType.Secondary.toLowerCase() : ""}`
     const size = `${(props.size || ButtonSize.Default).toLowerCase()}`
-    const className = `sds--btn ${type} ${size}`
+    const chevron = props.children ? "sds--btn-chevron" : "";
+    const className = `sds--btn ${type} ${size} ${chevron}`
 
     const onClickInternal = (e: any) => {
         stopEvent(e);

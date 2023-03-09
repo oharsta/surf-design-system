@@ -1,0 +1,22 @@
+.sds--menu-button {
+  $self: &;
+
+  position: relative;
+
+  &:not(.is-open) {
+    .sds--user-info--dropdown {
+      display: none;
+    }
+  }
+
+  &.is-open {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  .sds--user-info--dropdown {
+    right: initial;
+  }
+
+}
