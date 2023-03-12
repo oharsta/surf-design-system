@@ -2,7 +2,7 @@ import React from "react";
 import "./Tooltip.scss";
 import {Tooltip as ReactTooltip} from "react-tooltip";
 import {ReactComponent as InfoIcon} from "../../icons/functional-icons/info.svg";
-import {pseudoGuid, sanitize} from "../../common/utils";
+import {sanitize} from "../../common/utils";
 
 export interface TooltipProps {
     tip: string;
@@ -12,7 +12,7 @@ export interface TooltipProps {
 }
 
 const Tooltip = (props: React.PropsWithChildren<TooltipProps>) => {
-    const uniqueAnchorId = props.anchorId || pseudoGuid();
+    const uniqueAnchorId = props.anchorId || crypto.randomUUID();
     return (
         <div className={`sds--tooltip-container ${props.standalone ? "" : "sibbling"}`}>
             {props.children ? React.Children.map(props.children, (child: any) =>

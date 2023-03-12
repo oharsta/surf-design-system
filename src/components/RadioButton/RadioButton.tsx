@@ -1,7 +1,6 @@
 import React, {ChangeEventHandler} from "react";
 import Tooltip from "../Tooltip/index";
 import "../Tooltip/TooltipParent.scss";
-import {pseudoGuid} from "../../common/utils";
 
 export interface RadioButtonProps {
     label: string;
@@ -14,7 +13,7 @@ export interface RadioButtonProps {
 }
 
 const RadioButton = (props: RadioButtonProps) => {
-    const id = pseudoGuid();
+    const id = crypto.randomUUID();
     const className = `sds--radio-container ${
         props.tooltip ? "sds--tooltip-parent" : ""
     }`;
