@@ -7,6 +7,7 @@ export { default as ButtonType } from "./Button/ButtonType";
 export { default as Checkbox } from "./Checkbox/Checkbox";
 export { default as Chip } from "./Chip/Chip";
 export { default as LanguageSwitcher } from "./LanguageSwitcher/LanguageSwitcher";
+export { default as Loader } from "./Loader/Loader";
 export { default as Logo } from "./Logo/Logo";
 export { default as LogoType } from "./Logo/LogoType";
 export { default as LogoColor } from "./Logo/LogoColor";
