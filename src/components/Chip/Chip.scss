@@ -1,4 +1,122 @@
-.sds--chips svg {
-    width: calc(15em/16);
-    height: calc(18.75em/16)
+.sds--chips {
+
+  &.main-100 {
+    background-color: var(--sds--palette--main-color--100);
+
+    &:hover {
+      background-color: var(--sds--palette--main-color--100);
+    }
+  }
+
+  &.main-200 {
+    background-color: var(--sds--palette--main-color--200);
+
+    &:hover {
+      background-color: var(--sds--palette--main-color--200);
+    }
+  }
+
+  &.main-300 {
+    background-color: var(--sds--palette--main-color--300);
+    color: var(--sds--color--white);
+
+    &:hover {
+      background-color: var(--sds--palette--main-color--300);
+    }
+  }
+
+  &.main-400 {
+    background-color: var(--sds--palette--main-color--400);
+    color: var(--sds--color--white);
+
+    &:hover {
+      background-color: var(--sds--palette--main-color--400);
+    }
+  }
+
+  &.main-500 {
+    background-color: var(--sds--palette--main-color--500);
+    color: var(--sds--color--white);
+
+    &:hover {
+      background-color: var(--sds--palette--main-color--500);
+    }
+  }
+
+  &.support-100 {
+    background-color: var(--sds--palette--support-color--100);
+
+    &:hover {
+      background-color: var(--sds--palette--support-color--100);
+    }
+  }
+
+  &.support-400 {
+    background-color: var(--sds--palette--support-color--400);
+    color: var(--sds--color--white);
+
+    &:hover {
+      background-color: var(--sds--palette--support-color--400);
+    }
+  }
+
+  &.support-500 {
+    background-color: var(--sds--palette--support-color--500);
+    color: var(--sds--color--white);
+
+    &:hover {
+      background-color: var(--sds--palette--support-color--500);
+    }
+  }
+
+  &.status-default {
+    background-color: var(--sds--color--gray--500);
+    color: var(--sds--color--white);
+
+    &:hover {
+      background-color: var(--sds--color--gray--500);
+    }
+  }
+
+  &.status-success {
+    background-color: var(--sds--color--green--200);
+    color: var(--sds--color--black);
+
+
+    &:hover {
+      background-color: var(--sds--color--green--200);
+    }
+  }
+
+  &.status-warning {
+    background-color: var(--sds--color--yellow--200);
+    color: var(--sds--color--black);
+
+    &:hover {
+      background-color: var(--sds--color--yellow--200);
+    }
+  }
+
+  &.status-error {
+    background-color: var(--sds--color--red--200);
+    color: var(--sds--color--black);
+
+    &:hover {
+      background-color: var(--sds--color--red--200);
+    }
+  }
+
+  &.status-info {
+    background-color: var(--sds--color--blue--200);
+    color: var(--sds--color--black);
+
+    &:hover {
+      background-color: var(--sds--color--blue--200);
+    }
+  }
+
+  svg {
+    width: calc(15em / 16);
+    height: calc(18.75em / 16)
+  }
 }
